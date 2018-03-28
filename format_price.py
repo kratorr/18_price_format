@@ -1,5 +1,25 @@
-def format_price(price):
-    pass
+import sys
 
-if __name__ == '__main__':
-    pass
+
+def format_price(price):
+    if (type(price) != int and type(price) != str and type(price) != float):
+       return None
+    if type(price) == int:
+        return ("{:,}".format(int(price))).replace(",", " ")
+    try:
+        price = round(float(price), 2)
+        if str(price).endswith(".0") or str(price).endswith(".00"):
+            return "{:,.0f}".format(price).replace(',', ' ')
+        elif  str(price).endswith("0"):
+            return "{:,.1f}".format(price).replace(',', ' ')
+        else:
+            return "{:,.2f}".format(price).replace(',', ' ')
+    except: ValueError
+
+
+if __name__ == "__main__":
+    try:
+        price = sys.argv[1]
+        print(format_price(price))
+    except IndexError:
+        print("Price not found")
