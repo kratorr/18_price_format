@@ -2,11 +2,9 @@ import sys
 
 
 def format_price(price):
-    if (type(price) != int and type(price) != str and type(price) != float):
-        return None
-    elif type(price) == int:
-        return "{:,}".format(int(price)).replace(",", " ")
     try:
+        if (type(price) != int and type(price) != str and type(price) != float):
+            return None
         price = round(float(price), 2)
         if str(price).endswith(".0") or str(price).endswith(".00"):
             return "{:,.0f}".format(price).replace(',', ' ')
@@ -16,7 +14,6 @@ def format_price(price):
             return "{:,.2f}".format(price).replace(',', ' ')
     except ValueError:
         return None
-
 
 
 if __name__ == "__main__":
