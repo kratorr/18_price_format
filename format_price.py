@@ -1,12 +1,14 @@
 import sys
+import math
 
 
 def format_price(price):
+    min_fraction = 0.01
     try:
-        if (type(price) != int and type(price) != str and type(price) != float):
-            return None
         price = round(float(price), 2)
-        if str(price).endswith(".0") or str(price).endswith(".00"):
+        fraction, _ = math.modf(price)
+        print(math.modf(price))
+        if fraction < min_fraction:
             return "{:,.0f}".format(price).replace(',', ' ')
         elif str(price).endswith("0"):
             return "{:,.1f}".format(price).replace(',', ' ')
