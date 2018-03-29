@@ -7,7 +7,6 @@ def format_price(price):
     try:
         price = round(float(price), 2)
         fraction, _ = math.modf(price)
-        print(math.modf(price))
         if fraction < min_fraction:
             return "{:,.0f}".format(price).replace(',', ' ')
         elif str(price).endswith("0"):
