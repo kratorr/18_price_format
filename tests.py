@@ -37,7 +37,7 @@ class PriceFormatTestCase(unittest.TestCase):
 
     def test_string(self):
         price = format_price("test")
-        self.assertIsNone(None)
+        self.assertIsNone(price)
 
     def test_zero_int(self):
         price = format_price(0)
