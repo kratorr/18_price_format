@@ -44,6 +44,5 @@ class PriceFormatTestCase(unittest.TestCase):
         self.assertEqual(price, "0")
 
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
