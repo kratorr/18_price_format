@@ -2,14 +2,16 @@ import sys
 
 
 def format_price(price):
+    if type(price) == bool:
+        return None
     try:
         price = round(float(price), 2)
     except ValueError:
         return None
     if price.is_integer():
-        return "{:,.0f}".format(price).replace(',', ' ')
+        return "{:,.0f}".format(price).replace(",", " ")
     else:
-        return "{:,.2f}".format(price).replace(',', ' ')
+        return "{:,.2f}".format(price).replace(",", " ")
 
 
 if __name__ == "__main__":
