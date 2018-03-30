@@ -6,7 +6,7 @@ def format_price(price):
         price = round(float(price), 2)
     except ValueError:
         return None
-    if (price).is_integer():
+    if price.is_integer():
         return "{:,.0f}".format(price).replace(',', ' ')
     else:
         return "{:,.2f}".format(price).replace(',', ' ')

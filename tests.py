@@ -35,8 +35,8 @@ class PriceFormatTestCase(unittest.TestCase):
         price = format_price("")
         self.assertIsNone(price)
 
-    def test_bool(self):
-        price = format_price(True)
+    def test_string(self):
+        price = format_price("test")
         self.assertIsNone(None)
 
     def test_zero_int(self):
